@@ -16,11 +16,10 @@ class Carousel(models.Model):
 class AboutUs(models.Model):
     title = models.CharField(max_length = 50)
     content = models.TextField()
-    image = models.ImageField(upload_to='about_us/', verbose_name='Backgroup Image')
+    logo = models.ImageField(upload_to='about_us/')
     client = models.CharField(max_length = 50)
-    client_logo = models.ImageField(upload_to='about_us/', verbose_name='First Image')
-    #image2 = models.ImageField(upload_to='about_us/', verbose_name='second Image')
-
+    #client_logo = models.ImageField(upload_to='about_us/')
+   
     class Meta:
         verbose_name = 'about us '
         verbose_name_plural = 'about us '
@@ -62,3 +61,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.subject
+    
+
+class Client(models.Model):
+    title = models.CharField(max_length = 50)
+    logo = models.ImageField(upload_to='client/', verbose_name='Backgroup Image')
+   
+   
+
+    def __str__(self):
+        return self.title

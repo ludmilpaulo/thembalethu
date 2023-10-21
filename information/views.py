@@ -1,7 +1,7 @@
 # views.py
 from rest_framework import generics
-from .models import Carousel, AboutUs, Team, Contact
-from .serializers import CarouselSerializer, AboutUsSerializer, TeamSerializer, ContactSerializer
+from .models import Carousel, AboutUs, Team, Contact, Client
+from .serializers import CarouselSerializer, AboutUsSerializer, TeamSerializer, ContactSerializer, ClientSerializer
 
 class CarouselListCreateView(generics.ListCreateAPIView):
     queryset = Carousel.objects.all()
@@ -18,3 +18,8 @@ class TeamListCreateView(generics.ListCreateAPIView):
 class ContactListCreateView(generics.ListCreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+
+
+class ClientCreateView(generics.ListCreateAPIView):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
